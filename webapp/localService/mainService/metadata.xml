@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZASSET_MGMT_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Sim_Log" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LogId"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LogId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="LogId" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Company Code" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Anln1" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Asset" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SimDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SimTime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Field of type TIMS" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SimUser" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Afabe" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Depreciation area" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UsefulLifeNew" Type="Edm.Decimal" Precision="5" Scale="0" sap:unicode="false" sap:label="Useful Life"/>
+                <Property Name="ScrapValueNew" Type="Edm.Decimal" Precision="14" Scale="3" sap:unicode="false" sap:unit="Waers" sap:label="Field of type CURR"/>
+                <Property Name="NbvResult" Type="Edm.Decimal" Precision="16" Scale="3" sap:unicode="false" sap:unit="Waers" sap:label="Net Book Value"/>
+                <Property Name="DepTotalResult" Type="Edm.Decimal" Precision="16" Scale="3" sap:unicode="false" sap:unit="Waers" sap:label="Net Book Value"/>
+                <Property Name="Waers" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Comments" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="Character 100" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZASSET_MGMT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Sim_LogSet" EntityType="ZASSET_MGMT_SRV.Sim_Log" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="http://172.17.19.24:8000/sap/opu/odata/sap/ZASSET_MGMT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://172.17.19.24:8000/sap/opu/odata/sap/ZASSET_MGMT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
