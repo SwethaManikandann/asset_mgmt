@@ -128,6 +128,23 @@
             },
             "tableSettings": {
               "type": "ResponsiveTable"
+            },
+            "extensions": {
+              "module": "assetmgmt.ext.controller.ListReportExt",
+              "actions": {
+                "CreateSimLog": {
+                  "id": "btnCreateSimLog",
+                  "text": "Create Simulation Log",
+                  "press": "onCreateSimLog",
+                  "requiresSelection": false
+                },
+                "RefreshTable": {
+                  "id": "btnRefreshTable",
+                  "text": "Refresh",
+                  "press": "onRefreshTable",
+                  "requiresSelection": false
+                }
+              }
             }
           }
         },
