@@ -51,20 +51,22 @@ sap.ui.define([
             }
 
             // Prepare Payload
+            var dt = new Date();
             var oPayload = {
                 Bukrs: oData.Bukrs,
                 Anln1: oData.Anln1,
                 Afabe: oData.Afabe,
                 UsefulLifeNew: parseInt(oData.UsefulLifeNew, 10),
                 ScrapValueNew: parseFloat(oData.ScrapValueNew).toFixed(2),
+                Waers: "INR", // Updated to INR based on user sample
                 Comments: oData.Comments,
                 // Auto-filled
-                SimDate: new Date(),
+                SimDate: dt,
                 SimTime: {
-                    ms: new Date().getTime() - new Date(new Date().setHours(0, 0, 0, 0)).getTime(),
+                    ms: dt.getTime() - new Date(dt.getFullYear(), dt.getMonth(), dt.getDate()).getTime(),
                     __edmType: "Edm.Time"
-                }, // OData V2 Time format approximation or use string if backend expects string
-                SimUser: "User" // Placeholder
+                },
+                SimUser: "XXX" // Updated to match sample
             };
 
             // Adjust SimTime if strictly Edm.Time:
