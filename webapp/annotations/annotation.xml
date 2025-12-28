@@ -9,11 +9,11 @@
         <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/sap/ZASSET_MGMT_SRV/$metadata">
-        <edmx:Include Namespace="ZASSET_MGMT_SRV"/>
+        <edmx:Include Namespace="ZASSET_MGMT_SRV" Alias="Main"/>
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
-            <Annotations Target="ZASSET_MGMT_SRV.Sim_Log">
+            <Annotations Target="Main.Sim_Log">
                 <Annotation Term="UI.HeaderInfo">
                     <Record Type="UI.HeaderInfoType">
                         <PropertyValue Property="TypeName" String="Simulation Log"/>
@@ -190,7 +190,7 @@
                         </PropertyValue>
                     </Record>
                 </Annotation>
-                <Annotation Term="UI.PresentationVariant">
+                 <Annotation Term="UI.PresentationVariant">
                     <Record>
                         <PropertyValue Property="SortOrder">
                             <Collection>
