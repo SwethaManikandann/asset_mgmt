@@ -1,30 +1,33 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
     <Dialog id="createDialog" title="Create Simulation Log">
         <content>
-            <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
-                <form:content>
-                    <Label text="Company Code" required="true"/>
-                    <Input value="{createModel>/Bukrs}" maxLength="4"/>
-                    
-                    <Label text="Asset Number" required="true"/>
-                    <Input value="{createModel>/Anln1}" maxLength="12"/>
-                    
-                    <Label text="Depreciation Area" required="true"/>
-                    <Input value="{createModel>/Afabe}" maxLength="2"/>
-                    
-                    <Label text="New Useful Life (Years)"/>
-                    <Input value="{createModel>/UsefulLifeNew}" type="Number"/>
-                    
-                    <Label text="New Scrap Value"/>
-                    <Input value="{createModel>/ScrapValueNew}" type="Number" description="EUR"/>
-                    
-                    <Label text="Comments"/>
-                    <TextArea value="{createModel>/Comments}" rows="3"/>
-                </form:content>
-            </form:SimpleForm>
+            <VBox class="sapUiSmallMargin">
+                <Title text="Enter Simulation Details" level="H3" class="sapUiSmallMarginBottom"/>
+                <form:SimpleForm editable="true" layout="ColumnLayout">
+                    <form:content>
+                        <Label text="Company Code" required="true"/>
+                        <Input value="{createModel>/Bukrs}" maxLength="4"/>
+                        
+                        <Label text="Asset Number" required="true"/>
+                        <Input value="{createModel>/Anln1}" maxLength="12"/>
+                        
+                        <Label text="Depreciation Area" required="true"/>
+                        <Input value="{createModel>/Afabe}" maxLength="2"/>
+                        
+                        <Label text="New Useful Life (Years)"/>
+                        <Input value="{createModel>/UsefulLifeNew}" type="Number"/>
+                        
+                        <Label text="New Scrap Value"/>
+                        <Input value="{createModel>/ScrapValueNew}" type="Number" description="EUR"/>
+                        
+                        <Label text="Comments"/>
+                        <TextArea value="{createModel>/Comments}" rows="3"/>
+                    </form:content>
+                </form:SimpleForm>
+            </VBox>
         </content>
         <beginButton>
-            <Button text="Save" type="Emphasized" press="onSaveSimLog"/>
+            <Button text="Create" type="Emphasized" press="onSaveSimLog"/>
         </beginButton>
         <endButton>
             <Button text="Cancel" press="onCancelSimLog"/>
